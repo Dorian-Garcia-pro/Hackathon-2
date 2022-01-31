@@ -3,7 +3,7 @@ import "../styles/Depot.css";
 const Depot = () => {
   return (
     <div>
-      <h1>Page Depot</h1>
+      <h1>Depot</h1>
     </div>
   );
 };

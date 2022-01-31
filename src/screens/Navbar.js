@@ -60,7 +60,7 @@ const Navbar = ({ setSelectPage, setIsConnected }) => {
                 <span className="icon">
                   <i className="fas fa-window-close" />
                 </span>
-                <span className="text">Déconnection</span>
+                <span className="text">Déconnexion</span>
               </a>
             </li>
           </ul>
