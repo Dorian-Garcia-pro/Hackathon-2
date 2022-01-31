@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primaryColor: #2b8bcc;
+  --secondColor: #7d1fe7;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
