@@ -1,6 +1,12 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+.App {
+  display: flex;
+  background: var(--gradientColor);
+  /*   background-image: url("./assets/WNaocO.jpg"); */
+  font-family: var(--fontBody);
+  min-height: 100vh;
+  width: 100vw;
+  background-attachment: fixed;
+  font-style: normal;
+  color: var(--thirdColor);
+  justify-content: center;
 }
-

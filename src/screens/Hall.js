@@ -1,11 +1,11 @@
-import '../components/styles/Hall.css';
+import "../styles/Hall.css";
 
 const Hall = () => {
-	return (
-		<div className="hall">
-			<h1>Page Hall</h1>
-		</div>
-	);
+  return (
+    <div>
+      <h1>Page Hall</h1>
+    </div>
+  );
 };
 
 export default Hall;

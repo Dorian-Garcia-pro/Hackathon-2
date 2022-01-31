@@ -1,11 +1,11 @@
-import '../components/styles/Home.css';
+import "../styles/Home.css";
 
 const Home = ({ avatar, setAvatar }) => {
-	return (
-		<div className="home">
-			<h2>Page d'Accueil</h2>
-		</div>
-	);
+  return (
+    <div>
+      <h1>Page d'Accueil</h1>
+    </div>
+  );
 };
 
 export default Home;

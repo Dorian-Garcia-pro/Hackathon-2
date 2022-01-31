@@ -1,11 +1,11 @@
-import '../components/styles/Depot.css';
+import "../styles/Depot.css";
 
 const Depot = () => {
   return (
-    <div className="depot">
-      <h2>Page Depot</h2>
+    <div>
+      <h1>Page Depot</h1>
     </div>
   );
-}
+};
 
 export default Depot;

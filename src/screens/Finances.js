@@ -1,9 +1,9 @@
 const Finances = () => {
   return (
-    <div className="depot">
-      <h2>Page Finances</h2>
+    <div>
+      <h1>Page Finances</h1>
     </div>
   );
-}
+};
 
 export default Finances;

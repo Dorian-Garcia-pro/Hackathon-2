@@ -1,16 +1,64 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --primaryColor: #2b8bcc;
   --secondColor: #7d1fe7;
+  --thirdColor: ;
+  --gradientColor: linear-gradient(
+    49deg,
+    rgba(240, 240, 255, 0.8) 0%,
+    rgba(161, 200, 235, 0.3) 62%,
+    rgba(43, 139, 204, 0.3) 100%
+  );
+  --shadowColor: ;
+  --fontTitle: "IvyJournal" 400;
+  --fontBody: "Ivyjournal", sans-serif;
+  backface-visibility: hidden;
+}
+/* 
+[data-theme="dark"] {
+  --firstColor: #c2c3f0;
+  --secondColor: #f7ace3;
+  --thirdColor: rgb(235, 235, 235);
+  --gradientColor: #1e1f34;
+  --shadowColor: #c2c3f02f;
+  --fontTitle: "IvyJournal" 400;
+  --fontBody: "Ivyjournal", sans-serif;
+  backface-visibility: hidden;
+} */
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
 }
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+h1,
+h2 {
+  font-family: var(--fontTitle);
+  font-weight: 40;
+  font-weight: bold;
+  margin: 20px;
 }
