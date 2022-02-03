@@ -24,9 +24,49 @@ const Depot = () => {
                 <div className="photoSlideShow">
                   <img src={egypt} />
                 </div>
+                <div className="photoSlideShow">
+                  <img src={egypt} />
+                </div>
+                <div className="photoSlideShow">
+                  <img src={egypt} />
+                </div>
+                <div className="photoSlideShow">
+                  <img src={egypt} />
+                </div>
+                <div className="photoSlideShow">
+                  <img src={egypt} />
+                </div>
               </div>
               <div className="ChosenDest">
                 <img className="imgChosenDest" src={egypt} alt="" />
+              </div>
+            </div>
+            <div className="rowBottomResa">
+              <div className="rowBottomResaGauche">
+                <div className="titreChosenDest">Egypt Antique ★★★★</div>
+                <div className="descLightChosenDest">
+                  <p>Truc 1</p>
+                  <p>Truc 2</p>
+                  <p>Truc 3</p>
+                  <p>
+                    Veniam aliqua voluptate nostrud elit reprehenderit cupidatat
+                    aliquip. Proident est cupidatat laborum dolor eiusmod culpa
+                    laborum labore minim anim culpa ad aute. Aute sunt mollit
+                    voluptate cillum nostrud sint dolor Lorem ex aliqua. Dolor
+                    id non cupidatat eu anim magna reprehenderit non enim cillum
+                    occaecat. Consectetur deserunt exercitation et sunt proident
+                    irure voluptate.
+                  </p>
+                </div>
+              </div>
+              <span className="vertical-line"></span>
+              <div className="rowBottomResaDroite">
+                <div className="prixParPers">
+                  <p className="prixMinuscule">dés</p>
+                  <p className="prixChosenDest">999€</p>
+                  <p className="prixMinuscule">par pers.</p>
+                </div>
+                <div className="btnVoirDispo">Voir les disponibiltés</div>
               </div>
             </div>
           </div>
