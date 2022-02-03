@@ -3,7 +3,7 @@ import "./DestCard.css";
 import rome from "../assets/rome.jpg";
 
 const DestCard = ({ infoCard }) => {
-  console.log("image", infoCard.image);
+  // console.log("image", infoCard.image);
   return (
     <div>
       <div className="containerCardDest">
