@@ -1,7 +1,6 @@
-import { Carousel } from 'react-responsive-carousel';
 import Publicite from '../components/Publicite';
 import '../styles/Home.css';
-import Carrousel from '../components/Carrousel';
+//import Carrousel from '../components/Carrousel';
 import DestCard from '../components/DestCard';
 import egypt from '../assets/egypt.jpg';
 

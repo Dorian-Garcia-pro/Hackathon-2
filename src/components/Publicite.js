@@ -7,7 +7,7 @@ const Publicite = () => {
 	const [isOk, setIsOk] = useState(false);
 	const [timer, setTimer] = useState(0);
 
-	const firstPub = () => {
+	const firstPub = async () => {
 		if (pub.length > 0) {
 			let newId = entierAleatoire(0, pub.length);
 			setAffichage(pub[newId]);
@@ -28,10 +28,13 @@ const Publicite = () => {
 	}, []);
 
 	useEffect(() => {
-		let retour = firstPub();
-		if (retour === true && affichage.type !== undefined) {
-			//setIsOk(true);
-		}
+		const letsGo = async () => {
+			let retour = await firstPub();
+			if (retour === true && affichage.type !== undefined) {
+				//setIsOk(true);
+			}
+		};
+		letsGo();
 	}, [pub]);
 
 	useEffect(() => {
