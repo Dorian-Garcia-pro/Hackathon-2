@@ -1,5 +1,7 @@
 import React from "react";
 import "./Bagages.css";
+import petitSac from "../assets/Petit_sac.webp";
+import GrosSac from "../assets/Gros_sac.webp";
 
 function Bagages() {
   return (
@@ -17,28 +19,33 @@ function Bagages() {
           </div>
           <div className="optionsBagages">
             <div className="FormuleBagage FormuleBagage1">
-              <div className="imageFormule"></div>
+              <div className="imageFormule">
+                {" "}
+                <img src={petitSac} />
+              </div>
               <div className="bottomFormule bottomFormule1">
                 <div className="radioformule">
                   <input type="radio" value="Male" name="gender" />
                 </div>
-                <div className="textBottomFormule1">
-                  <p>1 bagage de petite taille seulement</p>
-                  <p>Inclus dans le tarif</p>
+                <div className="textBottomFormule">
+                  <p className="gras">1 bagage de petite taille seulement</p>
+                  <p className="petitGris">Inclus dans le tarif</p>
                 </div>
               </div>
             </div>
             <div className="ouOUou">OU</div>
             <div className="FormuleBagage FormuleBagage2">
-              <div className="imageFormule"></div>
+              <div className="imageFormule">
+                <img src={GrosSac} />
+              </div>
               <div className="bottomFormule bottomFormule2">
                 <div className="radioformule">
                   <input type="radio" value="Male" name="gender" />
                 </div>
 
-                <div className="textBottomFormule2">
-                  <p>1 bagage de petite taille seulement</p>
-                  <p>Inclus dans le tarif</p>
+                <div className="textBottomFormule">
+                  <p className="gras">Ajouter pour 50,00 €</p>
+                  <p className="petitGris">Par voyage</p>
                 </div>
               </div>
             </div>

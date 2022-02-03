@@ -4,8 +4,10 @@ import { Carousel } from "react-responsive-carousel";
 import Carrousel from "../components/Carrousel";
 import DestCard from "../components/DestCard";
 import egypt from "../assets/egypt.jpg";
-import Assurances from "../components/Assurances";
+import Formules from "../components/Formules";
 import Bagages from "../components/Bagages";
+import FastTrack from "../components/FastTrack";
+import Assurances from "../components/Assurances";
 
 const Depot = () => {
   const closePopup = () => {
@@ -71,8 +73,10 @@ const Depot = () => {
                 <div className="btnVoirDispo">Voir les disponibiltés</div>
               </div>
             </div>
-            <Assurances />
+            <Formules />
             <Bagages />
+            <FastTrack />
+            <Assurances />
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>
         </div>
@@ -83,7 +87,7 @@ const Depot = () => {
         </div>
         <p>Besoin d'aide ?</p>
         <p>Appelez-nous au 01 02 03 04 05</p>
-        <p>10€/s HT</p>
+        <p>10€/s + prix d'un appel local</p>
       </div>
     </div>
   );
