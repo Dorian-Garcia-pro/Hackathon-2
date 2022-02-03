@@ -150,6 +150,11 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  flex-direction: column;
+}
+.topDestinationText {
+  display: flex;
+  justify-content: space-between;
 }
 
 .galleryCard {
@@ -170,6 +175,9 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 1vh;
+}
+.helpPopupNone {
+  display: none;
 }
 
 .helpPopup p {

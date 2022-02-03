@@ -2,28 +2,26 @@ import React from "react";
 import "./DestCard.css";
 import rome from "../assets/rome.jpg";
 
-function DestCard() {
+const DestCard = ({ infoCard }) => {
+  console.log("image", infoCard.image);
   return (
     <div>
       <div className="containerCardDest">
         <div className="topCardDest">
-          <img src={rome} />
+          <img src={infoCard.image} alt={infoCard.name} />
         </div>
         <div className="bottomCardDest">
           <div className="nomDest">
-            <p className="nomDestP">Rome</p>
-            <p className="descDestP">
-              Sit sit occaecat aliquip amet quis tempor consectetur tempor. Sit
-              sit occaecat amet quis.
-            </p>
+            <p className="nomDestP">{infoCard.name}</p>
+            <p className="descDestP">description</p>
           </div>
           <div className="prixDest">
-            <p>999€</p>
+            <p>{infoCard.prix}$</p>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default DestCard;

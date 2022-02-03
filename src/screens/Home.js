@@ -3,14 +3,26 @@ import "../styles/Home.css";
 import Carrousel from "../components/Carrousel";
 import DestCard from "../components/DestCard";
 import egypt from "../assets/egypt.jpg";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const Home = ({ avatar, setAvatar }) => {
+  const [popup, setPopup] = useState(true);
   const closePopup = () => {
-    console.log("On verra plus tard");
+    setPopup(!popup);
   };
+  const [datas, setDatas] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3030/voyages/home")
+      .then((res) => res.data)
+      .then((res) => setDatas(res));
+  }, []);
 
   return (
     <div>
+      {console.log(datas)}
       <div className="topBanner">
         <h1>Les veilleurs de nudes</h1>
         <div className="avatarConnexion">Se connecter</div>
@@ -31,53 +43,36 @@ const Home = ({ avatar, setAvatar }) => {
               </div>
               <div className="TopDest">
                 <h2>Top destinations</h2>
-                <div className="topDestination">
-                  <p>Destination 1</p>
-                  <p>99€</p>
+                {datas.slice(0, 5).map((el) => (
+                  <>
+                    <div className="topDestination">
+                      <div className="topDestinationText">
+                        <p>{el.name}</p>
+                        <p>{el.prix}$</p>
+                      </div>
+                    </div>
+                    <hr></hr>
+                  </>
+                ))}
+                {/* <div className="topDestination">
+                  <p>Voyage avec les Avengers</p>
+                  <p>10 000 000€</p>
                 </div>
-                <hr></hr>
-                <div className="topDestination">
-                  <p>Destination 2</p>
-                  <p>99€</p>
-                </div>
-                <hr></hr>
-                <div className="topDestination">
-                  <p>Destination 3</p>
-                  <p>99€</p>
-                </div>
-                <hr></hr>
-                <div className="topDestination">
-                  <p>Destination 4</p>
-                  <p>99€</p>
-                </div>
-                <hr></hr>
-                <div className="topDestination">
-                  <p>Destination 5</p>
-                  <p>99€</p>
-                </div>
+                <hr></hr> */}
               </div>
             </div>
 
             <div className="galleryCard">
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
-              <DestCard />
+              {datas.map((el) => (
+                <DestCard infoCard={el} />
+              ))}
             </div>
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>
         </div>
       </div>
-      <div className="helpPopup">
-        <div id="closeHelpPopup" onclick={closePopup}>
+      <div className={popup ? "helpPopup" : ""}>
+        <div id="closeHelpPopup" onClick={closePopup}>
           X
         </div>
         <p>Besoin d'aide ?</p>

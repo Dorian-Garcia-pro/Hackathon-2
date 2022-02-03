@@ -26,7 +26,7 @@ const Depot = () => {
                 </div>
               </div>
               <div className="ChosenDest">
-                <img className="imgChosenDest" src={egypt} />
+                <img className="imgChosenDest" src={egypt} alt="" />
               </div>
             </div>
           </div>
