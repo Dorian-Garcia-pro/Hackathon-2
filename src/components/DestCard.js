@@ -13,7 +13,7 @@ const DestCard = ({ infoCard }) => {
         <div className="bottomCardDest">
           <div className="nomDest">
             <p className="nomDestP">{infoCard.name}</p>
-            <p className="descDestP">description</p>
+            {/*  <p className="descDestP">description</p> */}
           </div>
           <div className="prixDest">
             <p>{infoCard.prix}$</p>

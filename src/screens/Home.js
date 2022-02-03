@@ -77,7 +77,7 @@ const Home = ({ avatar, setAvatar }) => {
         </div>
         <p>Besoin d'aide ?</p>
         <p>Appelez-nous au 01 02 03 04 05</p>
-        <p>10€/s+ prix d'un appel local</p>
+        <p>10€/s + prix d'un appel local</p>
       </div>
     </div>
   );
