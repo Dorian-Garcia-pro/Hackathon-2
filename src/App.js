@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
-import Main from './screens/Main';
-import Navbar from './screens/Navbar';
+import { Routes, Route } from 'react-router-dom';
+import Detail from './screens/Detail';
+import Home from './screens/Home';
+import Historique from './screens/Historique';
+
 import './App.css';
 
 function App() {
@@ -21,9 +24,13 @@ function App() {
 		<div className="App">
 			{isConnected ? (
 				<div>
-					<Navbar setSelectPage={setSelectPage} />
+					{/*<Navbar setSelectPage={setSelectPage} />*/}
 					<main>
-						<Main selectPage={selectPage} setIsConnected={setIsConnected} />
+						<Routes>
+							<Route path="/" element={<Home />} />
+							<Route path="/detail/:id" element={<Detail />} />
+							<Route path="/historique" element={<Historique />} />
+						</Routes>
 					</main>
 				</div>
 			) : (
