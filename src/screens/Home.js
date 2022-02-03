@@ -1,6 +1,4 @@
-import { Carousel } from "react-responsive-carousel";
 import "../styles/Home.css";
-import Carrousel from "../components/Carrousel";
 import DestCard from "../components/DestCard";
 import egypt from "../assets/egypt.jpg";
 import { useState, useEffect } from "react";
@@ -12,6 +10,11 @@ const Home = ({ avatar, setAvatar }) => {
     setPopup(!popup);
   };
   const [datas, setDatas] = useState([]);
+  const [datasToFilter, setDatasToFilter] = useState([]);
+  const [isFilter, setIsFilter] = useState(false);
+  const handleIsFilterClick = () => {
+    setIsFilter(!isFilter);
+  };
 
   useEffect(() => {
     axios
@@ -19,15 +22,16 @@ const Home = ({ avatar, setAvatar }) => {
       .then((res) => res.data)
       .then((res) => setDatas(res));
   }, []);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3030/voyages/home")
+      .then((res) => res.data)
+      .then((res) => setDatasToFilter(res));
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [searchSelectTerm, setSearchSelectTerm] = useState("");
-  const [showSelectedDestinationOnly, setShowSelectedDestinationOnly] =
-    useState(false);
-  // const showSelect = setShowSelectedDestinationOnly(
-  //   !showSelectedDestinationOnly
-  // );
-
-  console.log(showSelectedDestinationOnly);
 
   const handleSearch = (e) => {
     let value = e.target.value;
@@ -38,10 +42,19 @@ const Home = ({ avatar, setAvatar }) => {
     let value = e.target.value;
     setSearchSelectTerm(value);
   };
-  console.log(handleSearchSelect);
+
+  useEffect(() => {
+    const resultFilter = datasToFilter.filter((val) =>
+      val.destination.includes(searchSelectTerm)
+    );
+    setDatasToFilter(resultFilter);
+  }, [searchSelectTerm]);
+
   return (
     <div>
-      {/* {console.log(datas)} */}
+      {console.log(isFilter)}
+      {console.log(datasToFilter)};
+      {/* {console.log("poulet", searchSelectTerm)} */}
       <div className="topBanner">
         <h1>Les veilleurs de nudes</h1>
         <div className="avatarConnexion">Se connecter</div>
@@ -65,7 +78,10 @@ const Home = ({ avatar, setAvatar }) => {
             </select>
           </div>
           <div className="searchSection searchDate ">
-            <select className="searchSectionInput">
+            <select
+              className="searchSectionInput"
+              onChange={handleSearchSelect}
+            >
               <option
                 value=""
                 selected
@@ -76,7 +92,7 @@ const Home = ({ avatar, setAvatar }) => {
                 Destination
               </option>
               {datas.slice(0, 12).map((el) => (
-                <option value={el.destination} onChange={handleSearchSelect}>
+                <option value={el.destination} onClick={handleIsFilterClick}>
                   {el.destination}
                 </option>
               ))}
@@ -117,16 +133,9 @@ const Home = ({ avatar, setAvatar }) => {
             </div>
 
             <div className="galleryCard">
-              {datas
-                .filter(
-                  (val) =>
-                    !showSelectedDestinationOnly ||
-                    val.destination.includes(searchSelectTerm)
-                )
-                // .filter((val) => val.destination.includes(searchTerm))
-                .map((val) => (
-                  <DestCard infoCard={val} />
-                ))}
+              {isFilter
+                ? datasToFilter.map((val) => <DestCard infoCard={val} />)
+                : datas.map((val) => <DestCard infoCard={val} />)}
             </div>
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>
