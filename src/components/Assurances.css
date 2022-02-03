@@ -1,0 +1,82 @@
+.assurancesWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.tarifsWrapper {
+  width: 100%;
+}
+.formules {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.formule {
+  width: 30%;
+  height: auto;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  padding: 20px 40px 0px 40px;
+}
+
+.formule h2 {
+  margin: 10px;
+}
+
+.textFormule {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.textFormule p {
+  margin: 10px 0px;
+}
+
+.btnFormule {
+  display: flex;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px;
+  background-color: var(--primaryColor);
+  width: 70%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.btnFormule:hover {
+  cursor: pointer;
+}
+
+.btnFormuleContinuer {
+  display: flex;
+  color: whitesmoke;
+  text-decoration: none;
+  padding: 10px;
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  width: 70%;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.btnFormuleContinuer:hover {
+  cursor: pointer;
+  background-color: var(--primaryColor);
+  border: none;
+  color: whitesmoke;
+}

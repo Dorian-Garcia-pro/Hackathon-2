@@ -4,6 +4,8 @@ import { Carousel } from "react-responsive-carousel";
 import Carrousel from "../components/Carrousel";
 import DestCard from "../components/DestCard";
 import egypt from "../assets/egypt.jpg";
+import Assurances from "../components/Assurances";
+import Bagages from "../components/Bagages";
 
 const Depot = () => {
   const closePopup = () => {
@@ -69,6 +71,8 @@ const Depot = () => {
                 <div className="btnVoirDispo">Voir les disponibiltés</div>
               </div>
             </div>
+            <Assurances />
+            <Bagages />
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>
         </div>

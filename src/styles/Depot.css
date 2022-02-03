@@ -32,7 +32,7 @@
 
 .rowBottomResa {
   background-color: pink;
-  height: auto;
+  height: 30vh;
   display: flex;
   align-items: center;
 }
@@ -89,7 +89,7 @@
 
 .prixMinuscule {
   color: red;
-  font-size: x-small;
+  font-size: small;
 }
 
 .btnVoirDispo {
