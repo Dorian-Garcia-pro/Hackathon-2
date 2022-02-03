@@ -7,10 +7,6 @@ const Publicite = () => {
 	const [isOk, setIsOk] = useState(false);
 	const [timer, setTimer] = useState(0);
 
-	const interval = setInterval(() => {
-		setTimer(timer + 1);
-	}, 5000);
-
 	const firstPub = () => {
 		if (pub.length > 0) {
 			let newId = entierAleatoire(0, pub.length);
@@ -33,36 +29,15 @@ const Publicite = () => {
 
 	useEffect(() => {
 		let retour = firstPub();
-		console.log(retour);
 		if (retour === true && affichage.type !== undefined) {
-			setIsOk(true);
+			//setIsOk(true);
 		}
 	}, [pub]);
 
 	useEffect(() => {
 		setIsOk(true);
 	}, [affichage]);
-	/*
-	useEffect(() => {
-		if (timer === 1) {
-			/*setIsOk(false);
-			let newId = entierAleatoire(1, pub.length);
-			console.log(newId);
-			setAffichage(pub[newId]);
-			console.log(affichage.id);
-			setTimer(0);
-			setIsOk(true);
-			
-			if (affichage.id === pub.length - 1) {
-				setAffichage(pub[0]);
-			} else {
-				let newId = affichage.id + 1;
-				setAffichage(pub[newId]);
-			}
-			console.log(affichage.id);
-		}
-	}, [affichage]);
-*/
+
 	return <div className="pub">{isOk ? <img src={affichage.image} /> : ''}</div>;
 };
 
