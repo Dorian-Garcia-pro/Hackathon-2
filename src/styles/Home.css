@@ -16,3 +16,170 @@
   height: 300px;
   width: 300px;
 }
+
+.centrer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.topBanner {
+  /*   background-color: var(--primaryColor); */
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.avatarConnexion {
+  /*   background-color: whitesmoke; */
+  width: auto;
+  height: auto;
+  /*   border-radius: 100%; */
+  justify-self: self-end;
+  position: absolute;
+  right: 0%;
+  margin: 20px;
+}
+
+.avatarConnexion:hover {
+  cursor: pointer;
+}
+
+.wrapperPubContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pubPlaceholder {
+  background-color: lightgrey;
+  height: 500px;
+  width: 150px;
+  position: sticky;
+}
+
+.pubLatDroite {
+  position: fixed;
+  right: 0%;
+}
+
+.pubLatGauche {
+  position: fixed;
+  left: 0%;
+}
+
+.searchBarPopups {
+}
+.searchBar {
+  display: flex;
+  width: 40vw;
+  height: 6vh;
+  /* background-color: black; */
+  border: 1px solid black;
+  margin: 2%;
+  border-radius: 8vh;
+  overflow: hidden;
+  align-items: stretch;
+  justify-content: space-between;
+  background-color: whitesmoke;
+}
+
+.searchSection {
+  border: 1px solid black;
+  min-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.searchSection:hover {
+  border: 1px solid black;
+  /*   background-color: lightgrey; */
+  box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
+}
+
+.searchLoupe {
+  min-width: 0px;
+  width: 10%;
+}
+
+.rowCarouTop {
+  display: flex;
+  height: 40vh;
+  width: 70vw;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+.Carou {
+  background-color: ;
+  height: 100%;
+  width: 65.7%;
+  overflow: hidden;
+}
+
+.Carou img {
+  width: 100%;
+}
+
+.TopDest {
+  display: flex;
+  background-color: whitesmoke;
+  height: 100%;
+  width: 31.5%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+  border-radius: 0px 10px 10px 0px;
+}
+
+.TopDest hr {
+  margin: 0;
+  height: 1px;
+  width: 100%;
+  border-top: 1px dotted black;
+}
+
+.topDestination {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.galleryCard {
+  width: 70vw;
+  height: auto;
+  display: flex;
+}
+
+.helpPopup {
+  color: white;
+  display: flex;
+  position: fixed;
+  bottom: 0%;
+  right: 3%;
+  width: 15vw;
+  /* height: vh; */
+  background-color: darkblue;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1vh;
+}
+
+.helpPopup p {
+  margin-bottom: 0px;
+}
+
+#closeHelpPopup {
+  width: 10%;
+  position: absolute;
+  right: 0%;
+  top: 0%;
+  padding: 5px;
+}

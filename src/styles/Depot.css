@@ -1,5 +1,27 @@
-.depot {
-  position: fixed;
-  top: 0;
-  margin-left: 80px;
+.wrapperMainContent {
+  width: 70vw;
+}
+.rowResaTop {
+  display: flex;
+  background-color: white;
+  width: 100%;
+  height: 60vh;
+}
+
+.slideshowGauche {
+  width: 10%;
+  background-color: pink;
+}
+
+.ChosenDest {
+  width: 100%;
+  overflow: hidden;
+}
+
+.imgChosenDest {
+  width: 100%;
+}
+
+.photoSlideShow {
+  width: 100%;
 }

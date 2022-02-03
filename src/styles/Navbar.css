@@ -1,3 +1,6 @@
+/* ul {
+  padding-left: 0rem;
+} */
 .container {
   position: absolute;
   left: 0px;
@@ -10,6 +13,7 @@
   display: flex;
   position: fixed;
   align-items: center;
+  left: 0%;
   width: 80px;
   height: 100vh;
   background-color: var(--primaryColor);

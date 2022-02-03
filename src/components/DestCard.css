@@ -1,0 +1,73 @@
+.containerCardDest {
+  width: 22vw;
+  height: 35vh;
+  border-radius: 1vh;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 6px 6px;
+}
+
+.topCardDest {
+  display: flex;
+  background-color: red;
+  height: 70%;
+  justify-content: center;
+}
+
+.topCardDest img {
+  background-color: red;
+  width: 100%;
+}
+
+.bottomCardDest {
+  display: flex;
+  background-color: lightblue;
+  height: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nomDest {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: whitesmoke;
+  align-content: center;
+  align-items: flex-start;
+  padding-left: 0.5vw;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.nomDest p,
+.prixDest p {
+  margin-bottom: 0px;
+}
+
+.nomDestP {
+  font-weight: bold;
+}
+
+.descDestP {
+  font-size: small;
+}
+
+.prixDest {
+  background-color: whitesmoke;
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: larger;
+  color: red;
+  padding: 5%;
+}
+
+.galleryCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
