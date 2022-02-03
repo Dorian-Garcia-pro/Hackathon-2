@@ -71,7 +71,7 @@ const Home = ({ avatar, setAvatar }) => {
           <div className="pubPlaceholder pubLatDroite "></div>
         </div>
       </div>
-      <div className={popup ? "helpPopup" : ""}>
+      <div className={popup ? "helpPopup" : "helpPopupNone"}>
         <div id="closeHelpPopup" onClick={closePopup}>
           X
         </div>
