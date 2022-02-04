@@ -42,34 +42,40 @@ const Depot = () => {
             <div className="rowResaTop">
               <div className="slideshowGauche">
                 <div className="photoSlideShow">
-                  <img src={egypt} />
+                  <img src={details.map((el) => el.image)} alt="" />
                 </div>
                 <div className="photoSlideShow">
-                  <img src={egypt} />
+                  <img src={details.map((el) => el.image)} alt="" />
                 </div>
                 <div className="photoSlideShow">
-                  <img src={egypt} />
+                  <img src={details.map((el) => el.image)} alt="" />
                 </div>
                 <div className="photoSlideShow">
-                  <img src={egypt} />
+                  <img src={details.map((el) => el.image)} alt="" />
                 </div>
                 <div className="photoSlideShow">
-                  <img src={egypt} />
+                  <img src={details.map((el) => el.image)} alt="" />
                 </div>
               </div>
               <div className="ChosenDest">
-                <img className="imgChosenDest" src="" alt="" />
+                <img
+                  className="imgChosenDest"
+                  src={details.map((el) => el.image)}
+                  alt=""
+                />
               </div>
             </div>
             <div className="rowBottomResa">
               <div className="rowBottomResaGauche">
                 <div className="titreChosenDest">
-                  {details.map((el) => el.destination)}
+                  {details.map((el) => el.name)}
                 </div>
                 <div className="descLightChosenDest">
-                  <p>Truc 1</p>
-                  <p>Truc 2</p>
-                  <p>Truc 3</p>
+                  <p>Notes:{details.map((el) => el.notes)}/5</p>
+                  <p>
+                    Nombre de Commandes:{details.map((el) => el.nbr_commande)}
+                  </p>
+                  <p>Date:{details.map((el) => el.evenement_date)}</p>
                   {details.map((el) => el.description)}
                 </div>
               </div>
