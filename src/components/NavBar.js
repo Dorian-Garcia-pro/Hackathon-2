@@ -1,12 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import "./NavBar.css";
 const NavBar = () => {
   return (
-    <div>
-      <NavLink to="/">Home</NavLink>
-      <NavLink to="./detail/id">Detail</NavLink>
-      <NavLink to="./historique">Histo</NavLink>
+    <div className="navbar">
+      <NavLink to="/" className="homeIcon">
+        <i class="fas fa-home fa-2x"></i>
+      </NavLink>
+      <h1>C'EST QUAND QU'ON ARRIVE ?</h1>
+      <NavLink to="/historique" className="homeIcon">
+        <i class="fas fa-file fa-2x"></i>
+      </NavLink>
     </div>
   );
 };

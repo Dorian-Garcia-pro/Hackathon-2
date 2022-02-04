@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Historique from "./screens/Historique";
 import Depot from "./screens/Depot";
+import NavBar from "./components/NavBar";
 
 import "./App.css";
 import BesoinDaide from "./components/BesoinDaide";
@@ -28,6 +29,7 @@ function App() {
         <div>
           {/*<Navbar setSelectPage={setSelectPage} />*/}
           <main>
+            <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/details/:id" element={<Depot />} />

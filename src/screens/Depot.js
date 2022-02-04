@@ -80,7 +80,6 @@ const Depot = () => {
 
   return (
     <div>
-      <NavBar />
       <div className="topBanner">
         <h1>réservation</h1>
         <div className="avatarConnexion">Se connecter</div>
