@@ -61,7 +61,19 @@ const Home = ({ avatar, setAvatar }) => {
     );
     setDatasToFilter(resultFilter);
   }, [searchActivite]);
-
+  const [destinations, setDestinations] = useState([]);
+  useEffect(() => {
+    const filterDestinations = () => {
+      for (let i = 0; i < datas.length; i++) {
+        let temp;
+        if (temp.indexOf(datas[i].destination) === -1) {
+          temp.push(datas[i].destination);
+        }
+        setDestinations(temp);
+      }
+    };
+  });
+  console.log(destinations);
   return (
     <div>
       {console.log(searchActivite)};
