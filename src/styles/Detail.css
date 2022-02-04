@@ -125,3 +125,16 @@
 	background-color: white;
 	border-radius: 10px;
 }
+
+.reservemoi {
+	display: flex;
+	color: whitesmoke;
+	text-decoration: none;
+	padding: 10px;
+	background-color: var(--primaryColor);
+	/*width: 70%;*/
+	align-content: center;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+}
