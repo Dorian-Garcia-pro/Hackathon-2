@@ -10,7 +10,7 @@ import Formules from '../components/Formules';
 import Publicite from '../components/Publicite';
 import Bagages from '../components/Bagages';
 import NavBar from '../components/NavBar';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import FastTrack from '../components/FastTrack';
 import Assurances from '../components/Assurances';
 
@@ -24,8 +24,23 @@ const Depot = () => {
 	const [popup, setPopup] = useState(true);
 	const params = useParams();
 
+	let navigate = useNavigate();
+
 	const closePopup = () => {
 		setPopup(!popup);
+	};
+
+	const letsGo = () => {
+		let d = new Date();
+		let NoTimeDate =
+			d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+		axios
+			.post('http://localhost:3030/historiques/historique', {
+				date: NoTimeDate,
+				destination: details[0].destination,
+				cout: calculPrix,
+			})
+			.then((response) => console.log(response));
 	};
 
 	useEffect(() => {
@@ -135,7 +150,9 @@ const Depot = () => {
 						<Assurances assurance={assurance} setAssurance={setAssurance} />
 						<div className="prixtotal">
 							Prix total : {calculPrix} $
-							<div className="reservemoi">Réserver ce voyage</div>
+							<div className="reservemoi" onClick={() => letsGo()}>
+								Réserver ce voyage
+							</div>
 						</div>
 					</div>
 					<div className="pubPlaceholder pubLatDroite ">
