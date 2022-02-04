@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import "./BesoinDaide.css";
 
 function BesoinDaide() {
   const [popup, setPopup] = useState(true);

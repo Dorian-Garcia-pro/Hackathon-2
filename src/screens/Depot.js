@@ -138,7 +138,7 @@ const Depot = () => {
             <FastTrack fastTrack={fastTrack} setFastTrack={setFastTrack} />
             <Assurances assurance={assurance} setAssurance={setAssurance} />
             <div className="prixtotal">
-              Prix total : {calculPrix} $
+              <h3>Prix total : {calculPrix} $</h3>
               <div className="reservemoi" onClick={() => letsGo()}>
                 Réserver ce voyage
               </div>
