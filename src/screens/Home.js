@@ -9,11 +9,16 @@ import BesoinDaide from "../components/BesoinDaide";
 
 const Home = ({ avatar, setAvatar }) => {
   const [popup, setPopup] = useState(true);
+  const [destinations, setDestinations] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchSelectTerm, setSearchSelectTerm] = useState("");
+  const [searchActivite, setSearchActivite] = useState("");
+  const [datas, setDatas] = useState([]);
+  const [datasToFilter, setDatasToFilter] = useState([]);
+
   const closePopup = () => {
     setPopup(!popup);
   };
-  const [datas, setDatas] = useState([]);
-  const [datasToFilter, setDatasToFilter] = useState([]);
 
   useEffect(() => {
     axios
@@ -28,10 +33,6 @@ const Home = ({ avatar, setAvatar }) => {
       .then((res) => res.data)
       .then((res) => setDatasToFilter(res));
   }, []);
-
-  const [searchTerm, setSearchTerm] = useState("");
-  const [searchSelectTerm, setSearchSelectTerm] = useState("");
-  const [searchActivite, setSearchActivite] = useState("");
 
   const handleSearch = (e) => {
     let value = e.target.value;
@@ -61,19 +62,23 @@ const Home = ({ avatar, setAvatar }) => {
     );
     setDatasToFilter(resultFilter);
   }, [searchActivite]);
-  const [destinations, setDestinations] = useState([]);
+
   useEffect(() => {
     const filterDestinations = () => {
-      for (let i = 0; i < datas.length; i++) {
-        let temp;
-        if (temp.indexOf(datas[i].destination) === -1) {
-          temp.push(datas[i].destination);
+      if (datas.length > 0) {
+        let temp = [];
+        for (let i = 0; i < datas.length; i++) {
+          if (temp.indexOf(datas[i].destination) === -1) {
+            temp.push(datas[i].destination);
+          }
         }
         setDestinations(temp);
       }
     };
-  });
-  console.log(destinations);
+    filterDestinations();
+  }, [datas]);
+  console.log("derer", destinations);
+
   return (
     <div>
       {console.log(searchActivite)};
@@ -105,8 +110,8 @@ const Home = ({ avatar, setAvatar }) => {
               <option value="" selected className="inputPlaceholder">
                 Destination
               </option>
-              {datas.slice(0, 12).map((el) => (
-                <option value={el.destination}>{el.destination}</option>
+              {destinations.map((el) => (
+                <option value={el}>{el}</option>
               ))}
             </select>
           </div>

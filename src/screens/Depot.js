@@ -83,8 +83,8 @@ const Depot = () => {
   const update = (index) => {
     if (index === 0) {
       setActu(1);
-    } else if (index === 5) {
-      setActu(4);
+    } else if (index === 4) {
+      setActu(3);
     } else {
       setActu(index);
     }
