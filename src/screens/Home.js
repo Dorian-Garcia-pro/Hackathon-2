@@ -81,12 +81,6 @@ const Home = ({ avatar, setAvatar }) => {
 
   return (
     <div>
-      {console.log(searchActivite)};
-      {/* {console.log("poulet", searchSelectTerm)} */}
-      {/* <div className="topBanner">
-        <h1>C'est quand qu'on arrive ?</h1>
-        {/*     <div className="avatarConnexion">Se connecter</div> */}
-      {/* </div> */}
       <div className="wrapperContent centrer">
         <div className="searchBar">
           <div className="searchSection searchOu ">
