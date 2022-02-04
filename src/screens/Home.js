@@ -4,7 +4,6 @@ import egypt from "../assets/egypt.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
-import { Link } from "react-router-dom";
 
 const Home = ({ avatar, setAvatar }) => {
   const [popup, setPopup] = useState(true);
