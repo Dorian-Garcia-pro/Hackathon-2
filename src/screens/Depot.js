@@ -1,18 +1,30 @@
-import "../styles/Depot.css";
-import { Carousel } from "react-responsive-carousel";
-/* import "../styles/Home.css"; */
-import Carrousel from "../components/Carrousel";
-import DestCard from "../components/DestCard";
+import "../styles/Detail.css";
+import { useEffect, useState } from "react";
+import axios from "axios";
 import egypt from "../assets/egypt.jpg";
 import Assurances from "../components/Assurances";
 import Bagages from "../components/Bagages";
+import NavBar from "../components/NavBar";
+import { useParams } from "react-router-dom";
 
 const Depot = () => {
+  const [details, setDetails] = useState([]);
+  const params = useParams();
   const closePopup = () => {
     console.log("On verra plus tard");
   };
+  useEffect(() => {
+    const id = params.id;
+    axios
+      .get(`http://localhost:3030/voyages/reservation/${id}`)
+      .then((res) => res.data)
+      .then((res) => setDetails(res));
+  }, []);
+
   return (
     <div>
+      {console.log(details)};
+      <NavBar />
       <div className="topBanner">
         <h1>réservation</h1>
         <div className="avatarConnexion">Se connecter</div>
@@ -40,32 +52,28 @@ const Depot = () => {
                 </div>
               </div>
               <div className="ChosenDest">
-                <img className="imgChosenDest" src={egypt} alt="" />
+                <img className="imgChosenDest" src="" alt="" />
               </div>
             </div>
             <div className="rowBottomResa">
               <div className="rowBottomResaGauche">
-                <div className="titreChosenDest">Egypt Antique ★★★★</div>
+                <div className="titreChosenDest">
+                  {details.map((el) => el.destination)}
+                </div>
                 <div className="descLightChosenDest">
                   <p>Truc 1</p>
                   <p>Truc 2</p>
                   <p>Truc 3</p>
-                  <p>
-                    Veniam aliqua voluptate nostrud elit reprehenderit cupidatat
-                    aliquip. Proident est cupidatat laborum dolor eiusmod culpa
-                    laborum labore minim anim culpa ad aute. Aute sunt mollit
-                    voluptate cillum nostrud sint dolor Lorem ex aliqua. Dolor
-                    id non cupidatat eu anim magna reprehenderit non enim cillum
-                    occaecat. Consectetur deserunt exercitation et sunt proident
-                    irure voluptate.
-                  </p>
+                  {details.map((el) => el.description)}
                 </div>
               </div>
               <span className="vertical-line"></span>
               <div className="rowBottomResaDroite">
                 <div className="prixParPers">
                   <p className="prixMinuscule">dés</p>
-                  <p className="prixChosenDest">999€</p>
+                  <p className="prixChosenDest">
+                    {details.map((el) => el.prix)}$
+                  </p>
                   <p className="prixMinuscule">par pers.</p>
                 </div>
                 <div className="btnVoirDispo">Voir les disponibiltés</div>

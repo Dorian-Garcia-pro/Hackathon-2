@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import Detail from "./screens/Detail";
+// import Detail from "./screens/Detail";
 import Home from "./screens/Home";
 import Historique from "./screens/Historique";
+import Depot from "./screens/Depot";
 
 import "./App.css";
 
@@ -28,7 +29,7 @@ function App() {
           <main>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/detail/:id" element={<Detail />} />
+              <Route path="/details/:id" element={<Depot />} />
               <Route path="/historique" element={<Historique />} />
             </Routes>
           </main>

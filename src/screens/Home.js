@@ -3,6 +3,8 @@ import DestCard from "../components/DestCard";
 import egypt from "../assets/egypt.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import NavBar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
 const Home = ({ avatar, setAvatar }) => {
   const [popup, setPopup] = useState(true);
@@ -11,10 +13,6 @@ const Home = ({ avatar, setAvatar }) => {
   };
   const [datas, setDatas] = useState([]);
   const [datasToFilter, setDatasToFilter] = useState([]);
-  const [isFilter, setIsFilter] = useState(false);
-  const handleIsFilterClick = () => {
-    setIsFilter(!isFilter);
-  };
 
   useEffect(() => {
     axios
@@ -44,7 +42,7 @@ const Home = ({ avatar, setAvatar }) => {
   };
 
   useEffect(() => {
-    const resultFilter = datasToFilter.filter((val) =>
+    const resultFilter = datas.filter((val) =>
       val.destination.includes(searchSelectTerm)
     );
     setDatasToFilter(resultFilter);
@@ -52,7 +50,7 @@ const Home = ({ avatar, setAvatar }) => {
 
   return (
     <div>
-      {console.log(isFilter)}
+      <NavBar />
       {console.log(datasToFilter)};
       {/* {console.log("poulet", searchSelectTerm)} */}
       <div className="topBanner">
@@ -92,9 +90,7 @@ const Home = ({ avatar, setAvatar }) => {
                 Destination
               </option>
               {datas.slice(0, 12).map((el) => (
-                <option value={el.destination} onClick={handleIsFilterClick}>
-                  {el.destination}
-                </option>
+                <option value={el.destination}>{el.destination}</option>
               ))}
             </select>
           </div>
@@ -133,9 +129,9 @@ const Home = ({ avatar, setAvatar }) => {
             </div>
 
             <div className="galleryCard">
-              {isFilter
-                ? datasToFilter.map((val) => <DestCard infoCard={val} />)
-                : datas.map((val) => <DestCard infoCard={val} />)}
+              {datasToFilter.map((val) => (
+                <DestCard infoCard={val} />
+              ))}
             </div>
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>

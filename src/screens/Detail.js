@@ -1,11 +1,11 @@
-import '../styles/Detail.css';
+// import '../styles/Detail.css';
 
-const Detail = () => {
-	return (
-		<div>
-			<h1>Page Detail</h1>
-		</div>
-	);
-};
+// const Detail = () => {
+//   return (
+//     <div>
+//       <h1>Page Detail</h1>
+//     </div>
+//   );
+// };
 
-export default Detail;
+// export default Detail;
