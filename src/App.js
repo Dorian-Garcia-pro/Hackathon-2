@@ -4,14 +4,15 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./screens/Home";
 import Historique from "./screens/Historique";
 import Depot from "./screens/Depot";
+import NavBar from "./components/NavBar";
 
 import "./App.css";
 
 function App() {
-	const [selectPage, setSelectPage] = useState(1);
-	const [isConnected, setIsConnected] = useState(true);
+  const [selectPage, setSelectPage] = useState(1);
+  const [isConnected, setIsConnected] = useState(true);
 
-	/*
+  /*
 	useEffect(() => {
 		if (localStorage.getItem('id_user') !== null) {
 			setIsConnected(true);
@@ -19,7 +20,7 @@ function App() {
 	}, []);
 	*/
 
-	useEffect(() => {}, [isConnected]);
+  useEffect(() => {}, [isConnected]);
 
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <div>
           {/*<Navbar setSelectPage={setSelectPage} />*/}
           <main>
+            <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/details/:id" element={<Depot />} />
