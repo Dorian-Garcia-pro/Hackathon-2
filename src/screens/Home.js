@@ -47,6 +47,20 @@ const Home = ({ avatar, setAvatar }) => {
     setDatasToFilter(resultFilter);
   }, [searchSelectTerm]);
 
+  const resultFilter = () => {
+    for (let i = 0; i < datas.length; i++) {
+      if (datas[i].notes < 3) {
+        datas.filter((val) => val.notes < 3);
+      } else if (datas[i].notes > 3 || datas[i].notes <= 4) {
+        datas.filter((val) => val.notes > 3 || datas.notes <= 4);
+      } else if (datas[i].notes > 4 || datas[i].notes <= 4.5) {
+        datas.filter((val) => val.notes > 4 || datas.notes <= 4.5);
+      } else {
+        datas.filter((val) => val.notes > 4.5);
+      }
+    }
+  };
+
   return (
     <div>
       <NavBar />
