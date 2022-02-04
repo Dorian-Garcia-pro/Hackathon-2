@@ -7,7 +7,7 @@ const NavBar = () => {
       <NavLink to="/" className="homeIcon">
         <i class="fas fa-home fa-2x"></i>
       </NavLink>
-      <h1>C'EST QUAND QU'ON ARRIVE ?</h1>
+      <h1>C-KAN</h1>
       <NavLink to="/historique" className="homeIcon">
         <i class="fas fa-file fa-2x"></i>
       </NavLink>

@@ -78,10 +78,22 @@ const Depot = () => {
     }
   }, [formules, bagages, fastTrack, assurance]);
 
+  const [actu, setActu] = useState(1);
+
+  const update = (index) => {
+    if (index === 0) {
+      setActu(1);
+    } else if (index === 5) {
+      setActu(4);
+    } else {
+      setActu(index);
+    }
+  };
+
   return (
     <div>
       <div className="topBanner">
-        <h1>réservation</h1>
+        {/*     <h1>réservation</h1> */}
         {/*    <div className="avatarConnexion">Se connecter</div> */}
       </div>
       <div className="wrapperContent centrer">
@@ -100,6 +112,20 @@ const Depot = () => {
                 </div>
               </div>
               <div className="ChosenDest">
+                <div className="boutonsSlideShow">
+                  <div
+                    onClick={() => update(actu - 1)}
+                    className="boutonActu boutonActuPrecedentMobile"
+                  >
+                    ←
+                  </div>
+                  <div
+                    onClick={() => update(actu - 1)}
+                    className="boutonActu boutonActuPrecedentMobile"
+                  >
+                    →
+                  </div>
+                </div>
                 <img
                   className="imgChosenDest"
                   src={details.map((el) => el.image)}
@@ -113,11 +139,18 @@ const Depot = () => {
                   {details.map((el) => el.name)}
                 </h2>
                 <div className="descLightChosenDest">
-                  <p>Notes:{details.map((el) => el.notes)}/5</p>
                   <p>
-                    Nombre de Commandes:{details.map((el) => el.nbr_commande)}
+                    Notes moyenne des voyageurs:{details.map((el) => el.notes)}
+                    /5
                   </p>
-                  <p>Date:{details.map((el) => el.evenement_date)}</p>
+                  <p>
+                    {details.map((el) => el.nbr_commande)} personnes ont déjà
+                    commandées ce voyage !
+                  </p>
+                  <p>
+                    Date de l'évennement:
+                    {details.map((el) => el.evenement_date)}
+                  </p>
                   {details.map((el) => el.description)}
                 </div>
               </div>
@@ -130,7 +163,7 @@ const Depot = () => {
                   </p>
                   <p className="prixMinuscule">par pers.</p>
                 </div>
-                <div className="btnVoirDispo">Voir les disponibiltés</div>
+                {/*    <div className="btnVoirDispo">Voir les disponibiltés</div> */}
               </div>
             </div>
             <Formules formules={formules} setFormules={setFormules} />

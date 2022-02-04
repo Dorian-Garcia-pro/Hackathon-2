@@ -77,13 +77,7 @@ const Home = ({ avatar, setAvatar }) => {
               className="searchSectionInput"
               onChange={handleChangeActivite}
             >
-              <option
-                value=""
-                selected
-                disabled
-                hidden
-                className="inputPlaceholder"
-              >
+              <option value="" selected className="inputPlaceholder">
                 Activité
               </option>
               {datas.map((el) => (
@@ -96,13 +90,7 @@ const Home = ({ avatar, setAvatar }) => {
               className="searchSectionInput"
               onChange={handleSearchSelect}
             >
-              <option
-                value=""
-                selected
-                disabled
-                hidden
-                className="inputPlaceholder"
-              >
+              <option value="" selected className="inputPlaceholder">
                 Destination
               </option>
               {datas.slice(0, 12).map((el) => (
@@ -150,9 +138,11 @@ const Home = ({ avatar, setAvatar }) => {
             </div>
 
             <div className="galleryCard">
-              {datasToFilter.map((val) => (
-                <DestCard infoCard={val} />
-              ))}
+              {datasToFilter
+                .filter((val) => val.destination.includes(searchTerm))
+                .map((val) => (
+                  <DestCard infoCard={val} />
+                ))}
             </div>
           </div>
           <div className="pubPlaceholder pubLatDroite ">
