@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const DestCard = ({ infoCard }) => {
   const detailId = `details/${infoCard.id}`;
   // console.log("image", infoCard.image);
+
   return (
     <Link to={detailId}>
       <div>

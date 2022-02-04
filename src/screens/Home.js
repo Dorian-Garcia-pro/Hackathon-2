@@ -68,8 +68,8 @@ const Home = ({ avatar, setAvatar }) => {
       {console.log(datasToFilter)};
       {/* {console.log("poulet", searchSelectTerm)} */}
       <div className="topBanner">
-        <h1>Les veilleurs de nudes</h1>
-        <div className="avatarConnexion">Se connecter</div>
+        <h1>C'est quand qu'on arrive ?</h1>
+        {/*     <div className="avatarConnexion">Se connecter</div> */}
       </div>
       <div className="wrapperContent centrer">
         <div className="searchBar">

@@ -76,7 +76,7 @@
   width: 40vw;
   height: 6vh;
   /* background-color: black; */
-  border: 3px solid rgb(216, 3, 3);
+  /*   border: 3px solid rgb(216, 3, 3); */
   margin: 2%;
   border-radius: 8vh;
   overflow: hidden;
@@ -86,7 +86,7 @@
 }
 
 .searchSection {
-  border: 3px solid rgb(216, 3, 3);
+  /* border: 3px solid rgb(216, 3, 3); */
   min-width: 30%;
   display: flex;
   justify-content: center;
@@ -95,7 +95,7 @@
 }
 
 .searchSection:hover {
-  border: 3px solid rgb(216, 3, 3);
+  /* border: 3px solid rgb(216, 3, 3); */
   /*   background-color: lightgrey; */
   box-shadow: rgba(50, 50, 93, 0.1) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
@@ -191,8 +191,8 @@
 }
 
 .searchSectionInput {
-  border: 3px solid rgb(216, 3, 3);
-  min-width: 30%;
+  border: 1px solid black;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
