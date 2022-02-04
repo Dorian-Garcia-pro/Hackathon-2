@@ -109,9 +109,9 @@ const Depot = () => {
             </div>
             <div className="rowBottomResa">
               <div className="rowBottomResaGauche">
-                <div className="titreChosenDest">
+                <h2 className="titreChosenDest">
                   {details.map((el) => el.name)}
-                </div>
+                </h2>
                 <div className="descLightChosenDest">
                   <p>Notes:{details.map((el) => el.notes)}/5</p>
                   <p>

@@ -73,7 +73,7 @@
 
 .searchBar {
   display: flex;
-  width: 40vw;
+  width: 50vw;
   height: 6vh;
   /* background-color: black; */
   /*   border: 3px solid rgb(216, 3, 3); */
@@ -87,7 +87,7 @@
 
 .searchSection {
   /* border: 3px solid rgb(216, 3, 3); */
-  min-width: 30%;
+  /*   min-width: 30%; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -101,6 +101,18 @@
     rgba(0, 0, 0, 0.1) 0px 18px 36px -18px inset;
 }
 
+.searchOu {
+  width: 40%;
+}
+
+.searchDate {
+  min-width: none;
+  width: 20%;
+}
+
+.searchAvecqui {
+  width: 40%;
+}
 .searchLoupe {
   min-width: 0px;
   width: 10%;
@@ -192,15 +204,18 @@
 }
 
 .searchSectionInput {
-  border: 1px solid black;
+  border: none;
+  background: transparent;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border-radius: 15px;
-  width: 80%;
-  margin-left: 5px;
+  /* border-radius: 0; */
+  width: 100%;
+  /* margin-left: 5px; */
+  height: 100%;
+  padding: 20px;
 }
 
 .inputPlaceholder {
