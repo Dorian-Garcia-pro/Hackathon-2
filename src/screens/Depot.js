@@ -100,12 +100,15 @@ const Depot = () => {
                   {details.map((el) => el.name)}
                 </div>
                 <div className="descLightChosenDest">
-                  <p>Notes:{details.map((el) => el.notes)}/5</p>
+                  <p>Note moyenne:{details.map((el) => el.notes)}/5</p>
                   <p>
-                    Nombre de Commandes:{details.map((el) => el.nbr_commande)}
+                    {details.map((el) => el.nbr_commande)} personnes ont déja
+                    effectuées ce voyage !
                   </p>
-                  <p>Date:{details.map((el) => el.evenement_date)}</p>
-                  {details.map((el) => el.description)}
+                  <p>
+                    Date de l'évènement:{details.map((el) => el.evenement_date)}
+                  </p>
+                  <p>{details.map((el) => el.description)}</p>
                 </div>
               </div>
               <span className="vertical-line"></span>

@@ -104,6 +104,7 @@
 .searchLoupe {
   min-width: 0px;
   width: 10%;
+  text-align: center;
 }
 
 .rowCarouTop {
@@ -204,4 +205,8 @@
 
 .inputPlaceholder {
   text-align: center;
+}
+
+.fas {
+  width: 100%;
 }

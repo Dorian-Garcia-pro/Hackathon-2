@@ -30,6 +30,7 @@ const Home = ({ avatar, setAvatar }) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchSelectTerm, setSearchSelectTerm] = useState("");
+  const [searchActivite, setSearchActivite] = useState("");
 
   const handleSearch = (e) => {
     let value = e.target.value;
@@ -41,6 +42,11 @@ const Home = ({ avatar, setAvatar }) => {
     setSearchSelectTerm(value);
   };
 
+  const handleChangeActivite = (e) => {
+    let value = e.target.value;
+    setSearchActivite(value);
+  };
+
   useEffect(() => {
     const resultFilter = datas.filter((val) =>
       val.destination.includes(searchSelectTerm)
@@ -48,24 +54,17 @@ const Home = ({ avatar, setAvatar }) => {
     setDatasToFilter(resultFilter);
   }, [searchSelectTerm]);
 
-  const resultFilter = () => {
-    for (let i = 0; i < datas.length; i++) {
-      if (datas[i].notes < 3) {
-        datas.filter((val) => val.notes < 3);
-      } else if (datas[i].notes > 3 || datas[i].notes <= 4) {
-        datas.filter((val) => val.notes > 3 || datas.notes <= 4);
-      } else if (datas[i].notes > 4 || datas[i].notes <= 4.5) {
-        datas.filter((val) => val.notes > 4 || datas.notes <= 4.5);
-      } else {
-        datas.filter((val) => val.notes > 4.5);
-      }
-    }
-  };
+  useEffect(() => {
+    const resultFilter = datas.filter((val) =>
+      val.name.includes(searchActivite)
+    );
+    setDatasToFilter(resultFilter);
+  }, [searchActivite]);
 
   return (
     <div>
       <NavBar />
-      {console.log(datasToFilter)};
+      {console.log(searchActivite)};
       {/* {console.log("poulet", searchSelectTerm)} */}
       <div className="topBanner">
         <h1>C'est quand qu'on arrive ?</h1>
@@ -74,7 +73,10 @@ const Home = ({ avatar, setAvatar }) => {
       <div className="wrapperContent centrer">
         <div className="searchBar">
           <div className="searchSection searchOu ">
-            <select className="searchSectionInput">
+            <select
+              className="searchSectionInput"
+              onChange={handleChangeActivite}
+            >
               <option
                 value=""
                 selected
@@ -85,7 +87,7 @@ const Home = ({ avatar, setAvatar }) => {
                 Activité
               </option>
               {datas.map((el) => (
-                <option value="">{el.name}</option>
+                <option value={el.name}>{el.name}</option>
               ))}
             </select>
           </div>
@@ -115,8 +117,11 @@ const Home = ({ avatar, setAvatar }) => {
               onChange={handleSearch}
             ></input>
           </div>
-          <div className="searchSection searchLoupe ">
-            <i class="fas fa-search"></i>
+          <div
+            className="searchSection searchLoupe"
+            onClick={() => setDatasToFilter(datas)}
+          >
+            <i class="fas fa-undo"></i>
           </div>
         </div>
         <div className="wrapperPubContent">
