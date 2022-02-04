@@ -10,7 +10,7 @@ import Formules from "../components/Formules";
 import Publicite from "../components/Publicite";
 import Bagages from "../components/Bagages";
 import NavBar from "../components/NavBar";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import FastTrack from "../components/FastTrack";
 import Assurances from "../components/Assurances";
 
@@ -24,8 +24,22 @@ const Depot = () => {
   const [popup, setPopup] = useState(true);
   const params = useParams();
 
+  let navigate = useNavigate();
+
   const closePopup = () => {
     setPopup(!popup);
+  };
+
+  const letsGo = () => {
+    let d = new Date();
+    let NoTimeDate =
+      d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate();
+    axios.post("http://localhost:3030/historiques/historique", {
+      date: NoTimeDate,
+      destination: details[0].destination,
+      cout: calculPrix,
+    });
+    navigate("/historique");
   };
 
   useEffect(() => {
@@ -69,7 +83,7 @@ const Depot = () => {
       <NavBar />
       <div className="topBanner">
         <h1>réservation</h1>
-        {/*  <div className="avatarConnexion">Se connecter</div> */}
+        <div className="avatarConnexion">Se connecter</div>
       </div>
       <div className="wrapperContent centrer">
         <div className="wrapperPubContent">
@@ -100,15 +114,12 @@ const Depot = () => {
                   {details.map((el) => el.name)}
                 </div>
                 <div className="descLightChosenDest">
-                  <p>Note moyenne:{details.map((el) => el.notes)}/5</p>
+                  <p>Notes:{details.map((el) => el.notes)}/5</p>
                   <p>
-                    {details.map((el) => el.nbr_commande)} personnes ont déja
-                    effectuées ce voyage !
+                    Nombre de Commandes:{details.map((el) => el.nbr_commande)}
                   </p>
-                  <p>
-                    Date de l'évènement:{details.map((el) => el.evenement_date)}
-                  </p>
-                  <p>{details.map((el) => el.description)}</p>
+                  <p>Date:{details.map((el) => el.evenement_date)}</p>
+                  {details.map((el) => el.description)}
                 </div>
               </div>
               <span className="vertical-line"></span>
@@ -129,7 +140,9 @@ const Depot = () => {
             <Assurances assurance={assurance} setAssurance={setAssurance} />
             <div className="prixtotal">
               Prix total : {calculPrix} $
-              <div className="reservemoi">Réserver ce voyage</div>
+              <div className="reservemoi" onClick={() => letsGo()}>
+                Réserver ce voyage
+              </div>
             </div>
           </div>
           <div className="pubPlaceholder pubLatDroite ">
