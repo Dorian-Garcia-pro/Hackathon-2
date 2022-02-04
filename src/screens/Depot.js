@@ -21,10 +21,11 @@ const Depot = () => {
 	const [bagages, setBagages] = useState(0);
 	const [fastTrack, setFastTrack] = useState(0);
 	const [assurance, setAssurance] = useState(0);
+	const [popup, setPopup] = useState(true);
 	const params = useParams();
 
 	const closePopup = () => {
-		console.log('On verra plus tard');
+		setPopup(!popup);
 	};
 
 	useEffect(() => {
@@ -44,20 +45,20 @@ const Depot = () => {
 		if (details.length > 0) {
 			let newPrix = details[0].prix;
 			if (formules === 1) {
-				newPrix = newPrix + 159.99;
+				newPrix = newPrix * 1.02;
 			} else if (formules === 2) {
-				newPrix = newPrix + 299;
+				newPrix = newPrix * 1.05;
 			} else {
 				newPrix = details[0].prix;
 			}
 			if (bagages) {
-				newPrix = newPrix + 50;
+				newPrix = newPrix * 1.1;
 			}
 			if (fastTrack) {
-				newPrix = newPrix + 59.99;
+				newPrix = newPrix * 1.05;
 			}
 			if (assurance) {
-				newPrix = newPrix + 99.99;
+				newPrix = newPrix * 1.25;
 			}
 			setCalulPrix(newPrix);
 		}
@@ -132,14 +133,17 @@ const Depot = () => {
 						<Bagages bagages={bagages} setBagages={setBagages} />
 						<FastTrack fastTrack={fastTrack} setFastTrack={setFastTrack} />
 						<Assurances assurance={assurance} setAssurance={setAssurance} />
-						<div className="prixtotal">Prix total : {calculPrix} $</div>
+						<div className="prixtotal">
+							Prix total : {calculPrix} $
+							<div className="reservemoi">Réserver ce voyage</div>
+						</div>
 					</div>
 					<div className="pubPlaceholder pubLatDroite ">
 						<Publicite />
 					</div>
 				</div>
 			</div>
-			<div className="helpPopup">
+			<div className={popup ? 'helpPopup' : 'helpPopupNone'}>
 				<div id="closeHelpPopup" onClick={closePopup}>
 					X
 				</div>

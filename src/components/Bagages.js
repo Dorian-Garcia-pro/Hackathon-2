@@ -51,7 +51,7 @@ const Bagages = (props) => {
 								</div>
 
 								<div className="textBottomFormule">
-									<p className="gras">Ajouter pour 50,00 €</p>
+									<p className="gras">+10% sur le prix du billet</p>
 									<p className="petitGris">Par voyage</p>
 								</div>
 							</div>

@@ -37,7 +37,7 @@ const Formules = (props) => {
 							className="btnFormuleContinuer"
 							onClick={() => changeFormule(0)}
 						>
-							Continuer pour 999$
+							Ne pas prendre l'option
 						</div>
 					</div>
 					<div className="formule">
@@ -54,7 +54,7 @@ const Formules = (props) => {
 							<p>Rangées spécifiques disponibles</p>
 						</div>
 						<div className="btnFormule" onClick={() => changeFormule(1)}>
-							159,99$ de plus
+							+ 2% sur le prix du billet
 						</div>
 					</div>
 					<div className="formule">
@@ -74,7 +74,7 @@ const Formules = (props) => {
 							<p>Jusqu'a 40minutes avant votre vol</p>
 						</div>
 						<div className="btnFormule" onClick={() => changeFormule(2)}>
-							299$ de plus
+							+ 5% sur le prix du billet
 						</div>
 					</div>
 				</div>

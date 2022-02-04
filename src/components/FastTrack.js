@@ -31,7 +31,7 @@ const FastTrack = (props) => {
 					<div className="fastTrackAjouter">
 						<div className="fastTrackPrixParPers">
 							<p className="petitGris">Par personne</p>
-							<p className="gras">59,99€</p>
+							<p className="gras">+ 5% sur le prix du billet</p>
 						</div>
 						<div
 							className="fastTrackBtnAjouter"
