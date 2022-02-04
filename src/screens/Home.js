@@ -4,6 +4,7 @@ import egypt from "../assets/egypt.jpg";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
+import Publicite from "../components/Publicite";
 
 const Home = ({ avatar, setAvatar }) => {
   const [popup, setPopup] = useState(true);
@@ -119,7 +120,9 @@ const Home = ({ avatar, setAvatar }) => {
           </div>
         </div>
         <div className="wrapperPubContent">
-          <div className="pubPlaceholder pubLatGauche"></div>
+          <div className="pubPlaceholder pubLatGauche">
+            <Publicite />
+          </div>
           <div className="wrapperMainContent">
             <div className="rowCarouTop">
               <div className="Carou">
@@ -147,7 +150,9 @@ const Home = ({ avatar, setAvatar }) => {
               ))}
             </div>
           </div>
-          <div className="pubPlaceholder pubLatDroite "></div>
+          <div className="pubPlaceholder pubLatDroite ">
+            <Publicite />
+          </div>
         </div>
       </div>
       <div className={popup ? "helpPopup" : "helpPopupNone"}>
