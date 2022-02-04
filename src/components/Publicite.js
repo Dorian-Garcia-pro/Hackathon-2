@@ -3,14 +3,13 @@ import axios from 'axios';
 
 const Publicite = () => {
 	const [pub, setPub] = useState([]);
-	const [affichage, setAffichage] = useState([]);
+	const [affichage, setAffichage] = useState({});
 	const [isOk, setIsOk] = useState(false);
-	const [timer, setTimer] = useState(0);
+	const [choice, setChoise] = useState(0);
 
-	const firstPub = async () => {
+	const firstPub = () => {
 		if (pub.length > 0) {
-			let newId = entierAleatoire(0, pub.length);
-			setAffichage(pub[newId]);
+			setAffichage(pub[entierAleatoire(0, pub.length - 1)]);
 			return true;
 		}
 		return false;
@@ -28,17 +27,19 @@ const Publicite = () => {
 	}, []);
 
 	useEffect(() => {
-		const letsGo = async () => {
-			let retour = await firstPub();
-			if (retour === true && affichage.type !== undefined) {
-				//setIsOk(true);
+		const letsGo = () => {
+			let retour = firstPub();
+			if (retour === true && typeof affichage !== undefined) {
+				setIsOk(true);
 			}
 		};
 		letsGo();
 	}, [pub]);
 
 	useEffect(() => {
-		setIsOk(true);
+		if (typeof affichage !== undefined) {
+			setIsOk(true);
+		}
 	}, [affichage]);
 
 	return <div className="pub">{isOk ? <img src={affichage.image} /> : ''}</div>;

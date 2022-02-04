@@ -81,7 +81,7 @@ const Home = ({ avatar, setAvatar }) => {
 				</div>
 			</div>
 			<div className="helpPopup">
-				<div id="closeHelpPopup" onclick={closePopup}>
+				<div id="closeHelpPopup" onClick={closePopup}>
 					X
 				</div>
 				<p>Besoin d'aide ?</p>
