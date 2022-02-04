@@ -1,4 +1,8 @@
 import "../styles/Detail.css";
+import { Carousel } from "react-responsive-carousel";
+/* import "../styles/Home.css"; */
+import Carrousel from "../components/Carrousel";
+import DestCard from "../components/DestCard";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import egypt from "../assets/egypt.jpg";
