@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
 import Publicite from "../components/Publicite";
+import BesoinDaide from "../components/BesoinDaide";
 
 const Home = ({ avatar, setAvatar }) => {
   const [popup, setPopup] = useState(true);
@@ -160,6 +161,7 @@ const Home = ({ avatar, setAvatar }) => {
           </div>
         </div>
       </div>
+      {/*       <BesoinDaide />
       <div className={popup ? "helpPopup" : "helpPopupNone"}>
         <div id="closeHelpPopup" onClick={closePopup}>
           X
@@ -167,7 +169,7 @@ const Home = ({ avatar, setAvatar }) => {
         <p>Besoin d'aide ?</p>
         <p>Appelez-nous au 01 02 03 04 05</p>
         <p>10€/s + prix d'un appel local</p>
-      </div>
+      </div> */}
     </div>
   );
 };

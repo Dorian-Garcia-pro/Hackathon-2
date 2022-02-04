@@ -6,12 +6,13 @@ import Historique from "./screens/Historique";
 import Depot from "./screens/Depot";
 
 import "./App.css";
+import BesoinDaide from "./components/BesoinDaide";
 
 function App() {
-	const [selectPage, setSelectPage] = useState(1);
-	const [isConnected, setIsConnected] = useState(true);
+  const [selectPage, setSelectPage] = useState(1);
+  const [isConnected, setIsConnected] = useState(true);
 
-	/*
+  /*
 	useEffect(() => {
 		if (localStorage.getItem('id_user') !== null) {
 			setIsConnected(true);
@@ -19,7 +20,7 @@ function App() {
 	}, []);
 	*/
 
-	useEffect(() => {}, [isConnected]);
+  useEffect(() => {}, [isConnected]);
 
   return (
     <div className="App">
@@ -37,6 +38,7 @@ function App() {
       ) : (
         "What ?"
       )}
+      <BesoinDaide />
     </div>
   );
 }

@@ -150,14 +150,14 @@ const Depot = () => {
           </div>
         </div>
       </div>
-      <div className={popup ? "helpPopup" : "helpPopupNone"}>
+      {/*       <div className={popup ? "helpPopup" : "helpPopupNone"}>
         <div id="closeHelpPopup" onClick={closePopup}>
           X
         </div>
         <p>Besoin d'aide ?</p>
         <p>Appelez-nous au 01 02 03 04 05</p>
         <p>10€/s + prix d'un appel local</p>
-      </div>
+      </div> */}
     </div>
   );
 };
