@@ -1,6 +1,6 @@
 import "../styles/Home.css";
 import DestCard from "../components/DestCard";
-import egypt from "../assets/egypt.jpg";
+import egypt from "../assets/egypt.png";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/NavBar";
