@@ -27,9 +27,9 @@ function App() {
     <div className="App">
       {isConnected ? (
         <div>
+          <NavBar />
           {/*<Navbar setSelectPage={setSelectPage} />*/}
           <main>
-            <NavBar />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/details/:id" element={<Depot />} />

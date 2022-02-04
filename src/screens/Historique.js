@@ -31,7 +31,7 @@ const Historique = () => {
 
   return (
     <div>
-      <h2>Résumé de vos commandes</h2>
+      <h2 id="titreResume">Résumé de vos commandes</h2>
       <DataGrid
         style={{ height: 650 }}
         columns={[
@@ -83,10 +83,11 @@ const Historique = () => {
         ]}
         sx={{
           /*fontFamily: 'var(--fontBody)',*/
-          color: "white",
+          color: "black",
           borderColor: "var(--firstColor)",
           backdropFilter: "blur(20px)",
-          boxShadow: "5px 5px 5px var(--shadowColor)",
+          boxShadow:
+            "rgba(0, 0, 0, 0.15) 0px 10px 20px, rgba(0, 0, 0, 0.2) 0px 6px 6px",
           padding: "8px",
           "& .MuiDataGrid-cell:hover": {},
         }}

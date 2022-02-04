@@ -82,7 +82,7 @@ const Depot = () => {
     <div>
       <div className="topBanner">
         <h1>réservation</h1>
-        <div className="avatarConnexion">Se connecter</div>
+        {/*    <div className="avatarConnexion">Se connecter</div> */}
       </div>
       <div className="wrapperContent centrer">
         <div className="wrapperPubContent">
