@@ -94,10 +94,10 @@ const Depot = () => {
             <div className="rowResaTop">
               <div className="slideshowGauche">
                 <div className="photoSlideShow">
-                  <img src={details.map((el) => el.image)} alt="" />
+                  <img src={details.map((el) => el.image2)} alt="" />
                 </div>
                 <div className="photoSlideShow">
-                  <img src={details.map((el) => el.image)} alt="" />
+                  <img src={details.map((el) => el.image3)} alt="" />
                 </div>
               </div>
               <div className="ChosenDest">
