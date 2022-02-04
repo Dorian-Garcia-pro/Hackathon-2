@@ -2,10 +2,12 @@ import "../styles/Detail.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import egypt from "../assets/egypt.jpg";
-import Assurances from "../components/Assurances";
+import Formules from "../components/Formules";
 import Bagages from "../components/Bagages";
 import NavBar from "../components/NavBar";
 import { useParams } from "react-router-dom";
+import FastTrack from "../components/FastTrack";
+import Assurances from "../components/Assurances";
 
 const Depot = () => {
   const [details, setDetails] = useState([]);
@@ -79,8 +81,10 @@ const Depot = () => {
                 <div className="btnVoirDispo">Voir les disponibiltés</div>
               </div>
             </div>
-            <Assurances />
+            <Formules />
             <Bagages />
+            <FastTrack />
+            <Assurances />
           </div>
           <div className="pubPlaceholder pubLatDroite "></div>
         </div>
@@ -91,7 +95,7 @@ const Depot = () => {
         </div>
         <p>Besoin d'aide ?</p>
         <p>Appelez-nous au 01 02 03 04 05</p>
-        <p>10€/s HT</p>
+        <p>10€/s + prix d'un appel local</p>
       </div>
     </div>
   );

@@ -1,12 +1,20 @@
-.assurancesWrapper {
+.AssurWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.tarifsWrapper {
+.AssurWrapper {
   width: 100%;
+}
+
+.AssurAjouter {
+  display: flex;
+  width: 60%;
+  height: 20%;
+  align-items: center;
+  justify-content: flex-start;
 }
 .formules {
   display: flex;
@@ -14,36 +22,55 @@
   justify-content: space-between;
 }
 
-.formule {
-  width: 30%;
+.AssurGauche {
+  width: 60%;
+  height: 100%;
+}
+
+.AssurGauche h2 {
+  margin: 0px 0px 20px 0px;
+}
+
+.AssurGauche p {
+  margin-bottom: 12px;
+}
+
+.Assur {
+  width: 100%;
   height: auto;
+  min-height: 20vh;
   background-color: whitesmoke;
   border-radius: 10px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
+  flex-direction: row;
+  padding: 40px 40px 15px 40px;
   justify-content: space-between;
-  padding: 20px 40px 0px 40px;
+  align-items: flex-start;
 }
 
 .formule h2 {
   margin: 10px;
 }
 
-.textFormule {
+.AssurTextRouge {
+  background-color: #cf2e1d;
+  color: whitesmoke;
+  padding: 5px;
+  width: fit-content;
+}
+.textFormuleAssur {
   display: flex;
   height: 100%;
   flex-direction: column;
   padding-top: 20px;
-  width: 100%;
+  width: 35%;
 }
 
-.textFormule p {
+.textFormuleAssur p {
   margin: 10px 0px;
 }
 
-.btnFormule {
+.AssurBtnAjouter {
   display: flex;
   color: whitesmoke;
   text-decoration: none;
@@ -56,8 +83,12 @@
   margin: 20px;
 }
 
-.btnFormule:hover {
+.AssurBtnAjouter:hover {
   cursor: pointer;
+}
+
+.AssurPrixParPers p {
+  margin: 2px;
 }
 
 .btnFormuleContinuer {
@@ -79,4 +110,60 @@
   background-color: var(--primaryColor);
   border: none;
   color: whitesmoke;
+}
+
+.FormuleAssur {
+  display: flex;
+  width: 45%;
+  height: 100%;
+  flex-direction: column;
+}
+.imageFormule {
+  display: flex;
+  height: 20vh;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.bottomFormule {
+  border: 1px solid grey;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.radioformule {
+  margin: 20px;
+}
+
+.ouOUou {
+  display: flex;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  font-size: x-large;
+  justify-content: center;
+  align-items: center;
+}
+
+.optionsAssur {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gras {
+  font-weight: bold;
+}
+
+.petitGris {
+  font-size: small;
+  color: grey;
+}
+
+.textBottomFormule {
+  width: 100%;
 }
