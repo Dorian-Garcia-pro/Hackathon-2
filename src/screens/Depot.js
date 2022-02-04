@@ -34,13 +34,12 @@ const Depot = () => {
 		let d = new Date();
 		let NoTimeDate =
 			d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
-		axios
-			.post('http://localhost:3030/historiques/historique', {
-				date: NoTimeDate,
-				destination: details[0].destination,
-				cout: calculPrix,
-			})
-			.then((response) => console.log(response));
+		axios.post('http://localhost:3030/historiques/historique', {
+			date: NoTimeDate,
+			destination: details[0].destination,
+			cout: calculPrix,
+		});
+		navigate('/historique');
 	};
 
 	useEffect(() => {
