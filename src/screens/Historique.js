@@ -4,17 +4,30 @@ import { useState, useEffect } from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 
 const Historique = () => {
+	const [bddChange, setBddChange] = useState(false);
 	const [data, setData] = useState('');
 	const [pageSizeAdmin, setPageSizeAdmin] = useState(10);
 
-	const deleteData = (id) => {};
+	const deleteData = (id) => {
+		axios.delete('http://localhost:3030/historiques/historique', {
+			data: { id: id },
+		}) && setBddChange(!bddChange);
+	};
 
 	useEffect(() => {
 		axios
 			.get('http://localhost:3030/historiques/historique')
 			.then((response) => response.data)
 			.then((data) => setData(data));
+		setBddChange(!bddChange);
 	}, []);
+
+	useEffect(() => {
+		axios
+			.get('http://localhost:3030/historiques/historique')
+			.then((response) => response.data)
+			.then((data) => setData(data));
+	}, [bddChange]);
 
 	return (
 		<div>
